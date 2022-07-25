@@ -12,7 +12,6 @@ import com.labela.nba_inspector.presentation.TeamDetailScreen
 import com.labela.nba_inspector.presentation.TeamScreen
 import com.labela.nba_inspector.ui.theme.NBAinspectorTheme
 
-
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -37,10 +37,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun TeamScreen() {
 
-    val scope = rememberCoroutineScope()
     var teams by remember { mutableStateOf(emptyList<Team>()) }
 
-    scope.launch {
+    LaunchedEffect(true) {
         val response = getData()
         teams = response
     }

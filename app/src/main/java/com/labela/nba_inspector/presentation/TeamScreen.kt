@@ -1,14 +1,15 @@
 package com.labela.nba_inspector.presentation
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -69,14 +70,18 @@ fun TeamRow(
 ) = Row(
     modifier = Modifier
         .fillMaxWidth()
+        .clip(shape = RoundedCornerShape(40.dp))
         .padding(horizontal = 12.dp)
+        .background(color = Color.Black)
+        .padding(horizontal = 20.dp, vertical = 12.dp)
         .clickable { onClick() },
 ) {
     Text(
+        color = Color.White,
         text = text,
-        color = Color.Black,
         fontSize = 16.sp,
     )
+
 }
 
 suspend fun getData(): List<Team> {

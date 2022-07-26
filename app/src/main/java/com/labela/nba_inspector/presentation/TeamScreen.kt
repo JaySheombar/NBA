@@ -49,7 +49,7 @@ fun TeamScreen(navController: NavController) {
                 .fillMaxSize()
                 .padding(contentPadding),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             items(teams.size) { index ->
                 val team = teams[index]
@@ -64,13 +64,12 @@ fun TeamScreen(navController: NavController) {
 }
 
 @Composable
-fun TeamRow(
+private fun TeamRow(
     text: String,
     onClick: () -> Unit,
 ) = Row(
     modifier = Modifier
         .fillMaxWidth()
-        .clip(shape = RoundedCornerShape(40.dp))
         .padding(horizontal = 12.dp)
         .background(color = Color.Black)
         .padding(horizontal = 20.dp, vertical = 12.dp)
@@ -81,10 +80,9 @@ fun TeamRow(
         text = text,
         fontSize = 16.sp,
     )
-
 }
 
-suspend fun getData(): List<Team> {
+private suspend fun getData(): List<Team> {
     val client = HttpClient(Android) {
         install(JsonFeature) {
             serializer = KotlinxSerializer(

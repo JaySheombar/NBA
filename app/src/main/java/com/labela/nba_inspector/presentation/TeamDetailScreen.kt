@@ -8,7 +8,6 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -93,13 +92,13 @@ private fun PlayerRow(
     modifier = Modifier
         .fillMaxWidth()
         .padding(horizontal = 12.dp)
-        .background(color = Color.Black)
+        .background(color = MaterialTheme.colors.surface)
         .padding(horizontal = 20.dp, vertical = 12.dp),
     verticalAlignment = Alignment.CenterVertically,
     horizontalArrangement = Arrangement.SpaceBetween,
 ) {
-    Text(text = "$firstName $lastName", color = Color.White)
-    Text(text = "$jersey", color = Color.White)
+    Text(text = "$firstName $lastName")
+    Text(text = jersey)
 }
 
 private suspend fun getPlayerData(): List<Player> {
